@@ -3,71 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>የካፌ ሜኑ</title>
+    <title>ዘመናዊ የካፌ እና ሬስቶራንት ሜኑ</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
             padding: 15px;
             direction: ltr;
         }
-        h1 {
+        header {
             text-align: center;
-            color: #333;
+            margin-bottom: 20px;
         }
-        .menu-item {
-            background: #fff;
-            padding: 12px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .item-info h3 {
-            margin: 0 0 5px 0;
+        header h1 {
             color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 5px;
         }
-        .item-info p {
-            margin: 0;
+        header p {
             color: #7f8c8d;
             font-size: 14px;
         }
+        .category {
+            margin-bottom: 25px;
+        }
+        .category h2 {
+            font-size: 18px;
+            color: #e67e22;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        .menu-item {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+        .menu-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 12px;
+        }
+        .item-details {
+            flex-grow: 1;
+        }
+        .item-details h3 {
+            font-size: 15px;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+        .item-details p {
+            font-size: 12px;
+            color: #95a5a6;
+            margin-bottom: 8px;
+        }
         .price {
+            font-size: 15px;
             font-weight: bold;
-            color: #e74c3c;
-            font-size: 16px;
+            color: #c0392b;
         }
     </style>
 </head>
 <body>
 
-    <h1>☕️ የካፌ ሜኑ </h1>
+    <header>
+        <h1>🌟 ሮያል ካፌ እና ሬስቶራንት 🌟</h1>
+        <p>ጣፋጭ ምግቦች፣ ትኩስ መጠጦች እና የቅንጦት መስተንግዶ</p>
+    </header>
 
-    <div class="menu-item">
-        <div class="item-info">
-            <h3>ልዩ ማኪያቶ (Special Macchiato)</h3>
-            <p>በጥራት የተጠበሰ ቡና እና ትኩስ ወተት</p>
+    <!-- የትኩስ መጠጦች ክፍል -->
+    <div class="category">
+        <h2>☕️ ትኩስ መጠጦች (Hot Drinks)</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200" alt="ማኪያቶ">
+                <div class="item-details">
+                    <h3>ልዩ ማኪያቶ</h3>
+                    <p>በጥራት የተጠበሰ ቡና እና ትኩስ አረፋ ያለው ወተት</p>
+                    <div class="price">45 ብር</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=200" alt="ካፑቺኖ">
+                <div class="item-details">
+                    <h3>ካፑቺኖ</h3>
+                    <p>በቺኮሌት ዱቄት የተዋበ ጣፋጭ የጣሊያን ቡና</p>
+                    <div class="price">60 ብር</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=200" alt="ባህላዊ ቡና">
+                <div class="item-details">
+                    <h3>ባህላዊ ጀበና ቡና</h3>
+                    <p>ከዕጣን እና ዳቦ ጋር የሚቀርብ የሀገር ባህል ቡና</p>
+                    <div class="price">35 ብር</div>
+                </div>
+            </div>
         </div>
-        <div class="price">45 ብር</div>
     </div>
 
-    <div class="menu-item">
-        <div class="item-info">
-            <h3>ባህላዊ ቡና (Traditional Coffee)</h3>
-            <p>ከዕጣን ጋር የሚቀርብ የሀገር ባህል ቡና</p>
+    <!-- የቁርስ እና fasting/non-fasting ምግቦች ክፍል -->
+    <div class="category">
+        <h2>🍳 ቁርስ እና ፉል (Breakfast & Meals)</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=200" alt="ስፔሻል ፉል">
+                <div class="item-details">
+                    <h3>ስፔሻል ፉል</h3>
+                    <p>በእንቁላል፣ በርበሬ፣ ዘይት እናቲማቲም የተሰራ</p>
+                    <div class="price">90 ብር</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=200" alt="በርገር">
+                <div class="item-details">
+                    <h3>ስፔሻል ቺዝ በርገር</h3>
+                    <p>ከተጠበሰ ስጋ፣ አይብ እና ፈረንሳይ ድንች ጋር</p>
+                    <div class="price">250 ብር</div>
+                </div>
+            </div>
         </div>
-        <div class="price">30 ብር</div>
     </div>
 
-    <div class="menu-item">
-        <div class="item-info">
-            <h3>የፍራፍሬ ጭማቂ (Mix Juice)</h3>
-            <p>አቮካዶ፣ ማንጎ እና ፓፓያ የተደባለቀበት</p>
+    <!-- የፍራፍሬ ጭማቂዎች ክፍል -->
+    <div class="category">
+        <h2>🧃 የፍራፍሬ ጭማቂዎች (Juices)</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?w=200" alt="ስፔሻል ጭማቂ">
+                <div class="item-details">
+                    <h3>ስፔሻል ዱባይ ጭማቂ</h3>
+                    <p>አቮካዶ፣ ማንጎ፣ ፓፓያ እና አናናስ የተደባለቀበት</p>
+                    <div class="price">150 ብር</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1556679343-c7306સી1972?w=200" alt="አቮካዶ">
+                <div class="item-details">
+                    <h3>ንጹህ አቮካዶ ጁስ</h3>
+                    <p>ከማር እና ከሎሚ ንክኪ ጋር</p>
+                    <div class="price">110 ብር</div>
+                </div>
+            </div>
         </div>
-        <div class="price">120 ብር</div>
     </div>
 
 </body>
